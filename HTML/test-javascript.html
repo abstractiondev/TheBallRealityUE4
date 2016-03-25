@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>TestHUD</title>
+
+	</head>
+
+	<body>
+
+		<img src="img/blui.png">
+
+		<h3 style="
+		position: absolute;
+		top: 350px;
+		left: 40px;">Click these buttons to trigger stuff in game!</h3>
+
+		<div style="
+		position: absolute;
+		top: 150px;
+		left: 400px;">
+			<ul style="list-style: none;">
+				<li><button onclick="toggle_spinning_cubes(true);">Spin Cubes</button></li>
+				<li><button onclick="toggle_spinning_cubes(false);">Stop Cubes</button></li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+
+			// Trigger events in game, feed UE4 JSON and parse it via blueprints
+			function toggle_spinning_cubes(flag)
+			{
+				blu_event('spin_toggle','{"value":' + flag +'}');
+			}
+
+		</script>
+
+	</body>
+
+
+</html>
